@@ -1,0 +1,127 @@
+:root {
+  color-scheme: light dark;
+  --accent: #ff9500;
+  --bg: #ffffff;
+  --fg: #1c1c1e;
+  --muted: #6b6b70;
+  --line: #e5e5ea;
+  --card: #f5f5f7;
+  --danger: #ff3b30;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1c1e;
+    --fg: #f5f5f7;
+    --muted: #9a9aa0;
+    --line: #38383a;
+    --card: #2c2c2e;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 300px;
+  margin: 0;
+  padding: 14px;
+  background: var(--bg);
+  color: var(--fg);
+  font: 14px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+}
+header h1 {
+  margin: 0;
+  font-size: 15px;
+}
+header #host {
+  margin: 2px 0 12px;
+  color: var(--muted);
+  font-size: 12px;
+  word-break: break-all;
+}
+button {
+  appearance: none;
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 14px;
+  font: 600 14px -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: pointer;
+}
+button.primary {
+  width: 100%;
+  background: var(--accent);
+  color: #000;
+}
+button.primary.active {
+  background: var(--danger);
+  color: #fff;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.toggle {
+  justify-content: space-between;
+  margin: 14px 0;
+  padding: 10px 12px;
+  background: var(--card);
+  border-radius: 10px;
+}
+.toggle span {
+  display: flex;
+  flex-direction: column;
+}
+.toggle em {
+  font-style: normal;
+  color: var(--muted);
+  font-size: 12px;
+}
+input[type="checkbox"] {
+  width: 44px;
+  height: 26px;
+  appearance: none;
+  background: var(--line);
+  border-radius: 13px;
+  position: relative;
+  transition: background 0.15s;
+  flex: 0 0 auto;
+}
+input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.15s;
+}
+input[type="checkbox"]:checked {
+  background: #34c759;
+}
+input[type="checkbox"]:checked::after {
+  transform: translateX(18px);
+}
+.stats {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.buttons {
+  gap: 8px;
+}
+button.ghost,
+button.danger {
+  flex: 1 1 0;
+  background: var(--card);
+  color: var(--fg);
+}
+button.danger {
+  color: var(--danger);
+}
+#unsupported p {
+  color: var(--muted);
+}

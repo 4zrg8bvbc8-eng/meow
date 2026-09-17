@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>Text Editor Overlay</title>
+  </head>
+  <body>
+    <header>
+      <h1>Text Editor Overlay</h1>
+      <p id="host">…</p>
+    </header>
+
+    <section id="unsupported" hidden>
+      <p>This page can’t be edited. Open a normal web page and try again.</p>
+    </section>
+
+    <section id="controls" hidden>
+      <button id="editBtn" class="primary" type="button">Start editing</button>
+
+      <label class="row toggle">
+        <span>
+          <strong>Apply my edits here</strong>
+          <em>Keeps saved edits on this site until turned off.</em>
+        </span>
+        <input type="checkbox" id="enabledToggle" />
+      </label>
+
+      <div class="stats">
+        <span id="pageCount">0</span> edits on this page ·
+        <span id="totalCount">0</span> on this site
+      </div>
+
+      <div class="row buttons">
+        <button id="clearPageBtn" class="ghost" type="button">
+          Reset this page
+        </button>
+        <button id="clearAllBtn" class="danger" type="button">
+          Reset whole site
+        </button>
+      </div>
+    </section>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
